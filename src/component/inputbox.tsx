@@ -4,8 +4,8 @@ import { useId } from "react";
 interface InputBoxProps {
   label: string;
   amount: number;
-  onAmountChange: any;
-  onCurrencyChange: any;
+  onAmountChange: (amount: number) => void;
+  onCurrencyChange: (currency: string) => void;
   currencyOptions: string[];
   selectedCurrency: string;
   amountDisabled: boolean;
@@ -27,7 +27,7 @@ function Inputbox(props: InputBoxProps) {
           type="number"
           placeholder="Amount"
           disabled={props.amountDisabled}
-          value={props.amount}
+          value={props.amount || ""}
           onChange={(e) => props.onAmountChange && props.onAmountChange(Number(e.target.value))}
         />
       </div>

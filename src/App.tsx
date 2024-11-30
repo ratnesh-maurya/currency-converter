@@ -59,12 +59,12 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency: number) => setAmount(currency)}
+                onCurrencyChange={(currency: string) => setFrom(currency)}
                 selectedCurrency={from}
                 onAmountChange={(amount: number) => setAmount(amount)}
                 amountDisabled={false}
                 currencyDisabled={false}
-                classaName="mb-4"
+                classaName=""
               />
             </div>
             <div className="relative w-full h-0.5">
@@ -85,7 +85,7 @@ function App() {
                 selectedCurrency={to}
                 amountDisabled={true}
                 currencyDisabled = {false}
-                onAmountChange={undefined} 
+                onAmountChange={(amount: number) => setConvertedAmount(amount)} 
                 classaName={""}              />
             </div>
             <button type="submit" className="w-full  bg-violet-950 text-white px-4 py-3 rounded-lg">
